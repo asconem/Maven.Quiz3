@@ -25,27 +25,10 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        int count = string.length() * (string.length() + 1) / 2;
-        Set<String> sub = new HashSet<>(count);
-        for(int i = 0; i < string.length(); i++) {
-            for (int j = i + 1; j<= string.length(); j++) {
-                sub.add(string.substring(i, j));
-            }
-        }
-        return sub.toArray(new String[sub.size()]);
+       return null;
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        int count = input.length() * (input.length() + 1) / 2;
-        int sub = -1;
-        ArrayList<String> substrings = new ArrayList<>(count);
-
-        for (int i = 0; i< input.length(); i++) {
-            for (int j = i + 1; j <= input.length(); j++) {
-                substrings.add(input.substring(i, j));
-                sub++;
-            }
-        }
-        return sub;
+      return null;
     }
 }
