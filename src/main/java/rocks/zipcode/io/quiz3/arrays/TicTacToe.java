@@ -33,6 +33,13 @@ public class TicTacToe {
                 (getColumn(columnIndex)[0].equals("O") && getColumn(columnIndex)[1].equals("O") && getColumn(columnIndex)[2].equals("O"));
     }
 
+    public Boolean isDiagonalHomogeneous() {
+        return ((board[0][0].equals("X")) && (board[1][1].equals("X")) && (board[2][2].equals("X"))) ||
+                ((board[0][2].equals("X")) && (board[1][1].equals("X")) && (board[2][0].equals("X"))) ||
+                ((board[0][0].equals("O")) && (board[1][1].equals("O")) && (board[2][2].equals("O"))) ||
+                ((board[0][2].equals("O")) && (board[1][1].equals("O")) && (board[2][0].equals("O")));
+    }
+
     public String getWinner() {
         String winner = "";
         for(int i = 0; i < 3; i++) {
@@ -41,6 +48,9 @@ public class TicTacToe {
             }
             if(isRowHomogenous(i)) {
                 winner = getRow(i)[0];
+            }
+            if(isDiagonalHomogeneous()) {
+                winner = getRow(1)[1];
             }
         }
         return winner;
