@@ -29,14 +29,24 @@ public class TicTacToe {
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        return null;
+        return (getColumn(columnIndex)[0].equals("X") && getColumn(columnIndex)[1].equals("X") && getColumn(columnIndex)[2].equals("X")) ||
+                (getColumn(columnIndex)[0].equals("O") && getColumn(columnIndex)[1].equals("O") && getColumn(columnIndex)[2].equals("O"));
     }
 
     public String getWinner() {
-        return null;
+        String winner = "";
+        for(int i = 0; i < 3; i++) {
+            if(isColumnHomogeneous(i)) {
+                winner = getColumn(i)[0];
+            }
+            if(isRowHomogenous(i)) {
+                winner = getRow(i)[0];
+            }
+        }
+        return winner;
     }
 
     public String[][] getBoard() {
-        return null;
+        return board;
     }
 }
